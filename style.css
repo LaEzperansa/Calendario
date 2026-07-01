@@ -1,0 +1,479 @@
+/* ===========================
+   FUENTE Y VARIABLES
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --azul:#57C7F5;
+    --rosa:#FFC7D8;
+    --blanco:#ffffff;
+    --gris:#f5f5f5;
+    --texto:rgb(0, 0, 0)000;
+    --sombra:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+body{
+
+    font-family:'Baloo 2', cursive;
+    background:#eef5ff;
+    color:var(--texto);
+
+}
+
+/* ===========================
+      FONDO
+=========================== */
+
+.background{
+
+    position:fixed;
+    inset:0;
+
+    background-image:
+    linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,.7)),
+    url("assets/fondo.png");
+
+    background-size:cover;
+    background-position:center;
+    z-index:-1;
+    
+
+}
+
+/* ===========================
+      HEADER
+=========================== */
+
+header{
+
+    text-align:center;
+    padding:40px 20px;
+
+}
+
+header h1{
+
+    font-size:100px;
+    color:white;
+
+    -webkit-text-stroke:8px #3cb6e6;
+
+    text-shadow:
+    0px 6px 10px rgba(0,0,0,.15);
+
+}
+
+header p{
+
+    margin-top:10px;
+    font-size:24px;
+
+}
+
+/* ===========================
+      SIDEBAR
+=========================== */
+
+.sidebar{
+
+    position:fixed;
+
+    top:20px;
+    left:20px;
+
+    width:260px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    box-shadow:var(--sombra);
+
+}
+
+.sidebar h2{
+
+    color:#4ca8dd;
+
+    margin-bottom:12px;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar li{
+
+    padding:8px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.sidebar button{
+
+    width:100%;
+
+    margin-top:15px;
+
+    border:none;
+
+    background:#57C7F5;
+
+    color:white;
+
+    border-radius:15px;
+
+    padding:12px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.sidebar button:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ===========================
+      CALENDARIOS
+=========================== */
+
+#calendarContainer{
+
+    margin-left:320px;
+
+    padding:30px;
+
+}
+
+.month{
+
+    margin-bottom:80px;
+
+}
+
+.month-title{
+
+    text-align:center;
+
+    font-size:75px;
+
+    color:white;
+
+    -webkit-text-stroke:3px #35b8a2;
+
+    margin-bottom:20px;
+
+}
+
+.calendar{
+
+    background:white;
+
+    border-radius:50px;
+
+    padding:20px;
+
+    box-shadow:var(--sombra);
+
+}
+
+/* ===========================
+      DIAS
+=========================== */
+
+.weekdays{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    text-align:center;
+
+    margin-bottom:10px;
+
+    font-weight:bold;
+
+}
+
+.days{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    gap:8px;
+
+}
+
+.day{
+
+    min-height:90px;
+
+    border:1px solid #ddd;
+
+    border-radius:15px;
+
+    padding:8px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    position:relative;
+
+    background:white;
+
+}
+
+.day:hover{
+
+    transform:translateY(-4px);
+
+    background:#f4fbff;
+
+}
+
+/* ===========================
+      DIA ACTUAL
+=========================== */
+
+.today{
+
+    border:3px solid rgb(255, 0, 128);
+
+}
+
+/* ===========================
+      DIA PASADO
+=========================== */
+
+.past{
+
+    background:#f6c1fbe6;
+
+}
+
+/* ===========================
+      SNOOPY
+=========================== */
+
+.snoopy{
+
+    position:absolute;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:80px;
+
+}
+
+/* ===========================
+      NOTAS
+=========================== */
+
+.note{
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    color:#000000;
+
+}
+
+/* ===========================
+      MODAL
+=========================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.modal-content{
+
+    background:white;
+
+    width:450px;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    box-shadow:var(--sombra);
+
+}
+
+.modal textarea{
+
+    width:100%;
+
+    height:120px;
+
+    margin-top:15px;
+
+    border-radius:15px;
+
+    padding:10px;
+
+    resize:none;
+
+}
+
+.modal input{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:10px;
+
+    border-radius:12px;
+
+}
+
+.modal button{
+
+    margin-top:15px;
+
+    width:100%;
+
+    border:none;
+
+    background:#edc5f0;
+
+    color:white;
+
+    padding:12px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+}
+
+#closeModal{
+
+    float:right;
+
+    cursor:pointer;
+
+    font-size:28px;
+
+}
+
+/* ===========================
+      BOTON SUBIR
+=========================== */
+
+#goTop{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#57C7F5;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    box-shadow:var(--sombra);
+
+}
+
+/* ===========================
+      RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.sidebar{
+
+    position:relative;
+
+    width:90%;
+
+    margin:auto;
+
+    left:0;
+
+}
+
+#calendarContainer{
+
+    margin-left:0;
+
+    padding:15px;
+
+}
+
+header h1{
+
+    font-size:45px;
+
+}
+
+.month-title{
+
+    font-size:40px;
+
+}
+
+.day{
+
+    min-height:70px;
+
+}
+
+}
