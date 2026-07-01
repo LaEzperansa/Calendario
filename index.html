@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planner 2026</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Fondo -->
+
+    <div class="background"></div>
+
+    <!-- Encabezado -->
+
+    <header>
+
+        <h1>PLANNER 2026</h1>
+
+        <p>es que se me olvida todo</p>
+
+    </header>
+
+    <!-- Panel lateral -->
+
+    <aside class="sidebar">
+
+        <h2> Tareas</h2>
+
+        <ul id="taskList">
+
+        </ul>
+
+        <button id="newTask">
+
+            + Nueva tarea
+
+        </button>
+
+        <hr>
+
+        <h2> Próximo evento</h2>
+
+        <div id="nextEvent">
+
+            No hay eventos
+
+        </div>
+
+        <hr>
+
+        <h2> Hoy</h2>
+
+        <div id="today"></div>
+
+    </aside>
+
+    <!-- Calendario -->
+
+    <main id="calendarContainer">
+
+    </main>
+
+    <!-- Ventana emergente -->
+
+    <div class="modal hidden" id="noteModal">
+
+        <div class="modal-content">
+
+            <span id="closeModal">&times;</span>
+
+            <h2 id="modalDate"></h2>
+
+            <textarea
+                id="noteText"
+                placeholder="Escribe una nota..."></textarea>
+
+            <input
+                type="time"
+                id="noteTime">
+
+            <button id="saveNote">
+
+                Guardar
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Botón subir -->
+
+    <button id="goTop">
+
+        ↑
+
+    </button>
+
+    <!-- Script -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
